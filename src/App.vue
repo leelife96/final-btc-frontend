@@ -1,5 +1,9 @@
 <template>
   <PageHeader />
+  <router-link to="/user">UserList</router-link> |
+  <router-link to="/user/findById">UserSelect</router-link> |
+  <router-link to="/user/editById">UserUpdate</router-link> |
+  <router-link to="/user/save">UserCreate</router-link>
   // 헤더 컴포넌트
   <router-view />
   // 페이지 이동이 표시될 곳

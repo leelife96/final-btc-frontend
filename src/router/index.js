@@ -16,6 +16,34 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
+  {
+    path: "/user",
+    name: "ListView",
+
+    component: () =>
+      import(/* webpackChunkName: "user" */ "../views/ListView.vue"),
+  },
+  {
+    path: "/user/findById",
+    name: "SelectView",
+
+    component: () =>
+      import(/* webpackChunkName: "user" */ "../views/SelectView"),
+  },
+  {
+    path: "/user/editById",
+    name: "UpdateView",
+
+    component: () =>
+      import(/* webpackChunkName: "user" */ "../views/UpdateView"),
+  },
+  {
+    path: "/user/save",
+    name: "CreateView",
+
+    component: () =>
+      import(/* webpackChunkName: "user" */ "../views/CreateView"),
+  },
 ];
 
 const router = createRouter({
