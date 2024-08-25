@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <a href="/user">사용자 목록</a>
+    <br />
+    <button @click="getData">데이터 호출</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import axios from "axios";
 export default {
   name: "HomeView",
-  components: {
-    HelloWorld,
+  methods: {
+    getData() {
+      axios
+        .get("http://localhost:8080")
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>
+
+<style scoped>
+.home {
+  text-align: center;
+}
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+</style>

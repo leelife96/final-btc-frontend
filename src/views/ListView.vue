@@ -1,5 +1,31 @@
 <template>
-  <div>
-    <h1>ListView</h1>
+  <div class="container mt-3">
+    <h1 class="display-1 text-center">사용자 목록</h1>
+    <div class="btn-group">
+      <router-link to="/user/save" class="btn btn-primary"
+        >사용자 추가</router-link
+      >
+    </div>
+    <table class="table table-hover mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th>이름</th>
+          <th>이메일</th>
+          <th>가입날짜</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="cursor-pointer"
+          v-for="row in result"
+          v-bind:key="row.no"
+          v-on:click="href(row)"
+        >
+          <td>{{ row.name }}</td>
+          <td>{{ row.email }}</td>
+          <td>{{ dateTime(row.regDate) }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
