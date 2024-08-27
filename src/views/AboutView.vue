@@ -17,7 +17,7 @@ export default {
   methods: {
     get() {
       axios
-        .get("api/connectTest")
+        .get("/connectTest")
         .then((response) => {
           this.connectData = response.data;
         })

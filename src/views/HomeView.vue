@@ -13,7 +13,7 @@ export default {
   methods: {
     getData() {
       axios
-        .get("http://localhost:8080")
+        .get("/api")
         .then((response) => {
           console.log(response);
         })
