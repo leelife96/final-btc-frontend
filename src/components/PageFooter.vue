@@ -1,7 +1,6 @@
 <!-- PageFooter.vue -->
 <template>
   <footer class="footer">
-    <hr />
     <p>여기는 footer 자리입니다.</p>
   </footer>
 </template>

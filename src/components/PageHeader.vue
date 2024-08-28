@@ -9,7 +9,6 @@
       <router-link to="/board/list">게시판</router-link>
     </div>
   </header>
-  <hr />
 </template>
 
 <script>
@@ -19,7 +18,7 @@ export default {};
 <style scoped>
 /* 전체 헤더 스타일 */
 header {
-  background-color: #4caf50; /* 배경색 */
+  background-color: #2c3e50; /* 배경색 */
   padding: 10px; /* 내부 여백 */
   color: white; /* 글자 색상 */
   text-align: center; /* 중앙 정렬 */
