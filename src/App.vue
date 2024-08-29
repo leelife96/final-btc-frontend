@@ -6,7 +6,8 @@
       <router-link to="/user">UserList</router-link> |
       <router-link to="/user/findById">UserSelect</router-link> |
       <router-link to="/user/editById">UserUpdate</router-link> |
-      <router-link to="/user/save">UserCreate</router-link>
+      <router-link to="/user/save">UserCreate</router-link> |
+      <router-link to="/signup">Sign Up</router-link> |
     </nav>
 
     <!-- 채팅 컴포넌트 사용 -->
