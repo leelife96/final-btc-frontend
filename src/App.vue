@@ -10,6 +10,8 @@
       <router-link to="/signup">Sign Up</router-link> |
     </nav>
 
+    <CoinComponent />
+
     <!-- 채팅 컴포넌트 사용 -->
     <ChatComponent />
 
@@ -29,11 +31,14 @@ import PageFooter from "@/components/PageFooter";
 // 채팅 컴포넌트
 import ChatComponent from "@/components/ChatComponent";
 
+import CoinComponent from "@/components/CoinComponent.vue";
+
 export default {
   name: "App",
   components: {
     PageFooter,
     PageHeader,
+    CoinComponent,
     ChatComponent, // 채팅 컴포넌트 등록
   },
 };

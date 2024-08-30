@@ -1,14 +1,20 @@
 <template>
   <header>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/board/list">게시판</router-link> |
-      <span v-if="!isLoggedIn">
-        | <router-link to="/login">Login</router-link> |
-        <router-link to="/signup">Sign Up</router-link>
-      </span>
-      <span v-if="isLoggedIn"> | <button @click="logout">Logout</button> </span>
+      <div class="nav-center">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link> |
+        <router-link to="/board/list">게시판</router-link>
+      </div>
+      <div class="nav-right">
+        <span v-if="!isLoggedIn">
+          <router-link to="/login">로그인</router-link> |
+          <router-link to="/signup">회원가입</router-link>
+        </span>
+        <span v-if="isLoggedIn">
+          <button @click="logout">Logout</button>
+        </span>
+      </div>
     </div>
   </header>
 </template>
@@ -47,13 +53,24 @@ header {
   background-color: #2c3e50;
   padding: 10px;
   color: white;
-  text-align: center;
 }
 
 #nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-center {
+  display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 15px; /* 메뉴 간 간격 */
+  flex-grow: 1; /* 중앙 정렬을 위해 flex-grow 사용 */
+}
+
+.nav-right {
+  display: flex;
+  gap: 15px; /* 메뉴 간 간격 */
 }
 
 #nav a {
@@ -69,10 +86,18 @@ header {
   background-color: #3e8e41;
 }
 
-hr {
+button {
+  color: white;
+  background-color: transparent;
   border: none;
-  height: 2px;
-  background-color: #ddd;
-  margin-top: 10px;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c0392b;
 }
 </style>
