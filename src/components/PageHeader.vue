@@ -2,6 +2,7 @@
   <header>
     <div id="nav">
       <div class="nav-center">
+        <span class="coin-title">Coin</span>
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/board/list">게시판</router-link>
@@ -50,7 +51,7 @@ export default {
 <style scoped>
 /* 헤더 및 네비게이션 스타일 */
 header {
-  background-color: #2c3e50;
+  background-color: #181a20;
   padding: 10px;
   color: white;
 }
@@ -64,8 +65,17 @@ header {
 .nav-center {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px; /* 메뉴 간 간격 */
   flex-grow: 1; /* 중앙 정렬을 위해 flex-grow 사용 */
+  position: relative; /* 자식 요소의 위치를 조정하기 위해 사용 */
+  margin-left: -750px; /* 왼쪽으로 옮길 값 설정 */
+}
+
+.coin-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
 }
 
 .nav-right {

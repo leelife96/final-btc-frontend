@@ -1,38 +1,17 @@
 <template>
   <div class="home">
-    <a href="/user">사용자 목록</a>
-    <br />
-    <button @click="getData">데이터 호출</button>
+    <CoinComponent />
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import CoinComponent from "@/components/CoinComponent.vue";
+
 export default {
-  name: "HomeView",
-  methods: {
-    getData() {
-      axios
-        .get("/api")
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+  components: {
+    CoinComponent,
   },
 };
 </script>
 
-<style scoped>
-.home {
-  text-align: center;
-}
-a {
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-</style>
+<style scoped></style>

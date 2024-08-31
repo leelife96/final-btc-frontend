@@ -17,32 +17,10 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/user",
-    name: "ListView",
-
+    path: "/board/list",
+    name: "BoardList",
     component: () =>
-      import(/* webpackChunkName: "user" */ "../views/ListView.vue"),
-  },
-  {
-    path: "/user/findById",
-    name: "SelectView",
-
-    component: () =>
-      import(/* webpackChunkName: "user" */ "../views/SelectView"),
-  },
-  {
-    path: "/user/editById",
-    name: "UpdateView",
-
-    component: () =>
-      import(/* webpackChunkName: "user" */ "../views/UpdateView"),
-  },
-  {
-    path: "/user/save",
-    name: "CreateView",
-
-    component: () =>
-      import(/* webpackChunkName: "user" */ "../views/CreateView"),
+      import(/* webpackChunkName: "user" */ "../views/BoardList.vue"),
   },
   {
     path: "/signup",
