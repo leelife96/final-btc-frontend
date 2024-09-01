@@ -1,6 +1,7 @@
 <template>
   <div>
     <h3>게시판 목록</h3>
+    <RegistBoard @reload="reload" />
     <table class="board-table">
       <thead>
         <tr>
@@ -18,7 +19,6 @@
           <td>{{ board.content }}</td>
           <td>{{ board.writer }}</td>
           <td>{{ formatDate(board.regDate) }}</td>
-          <!-- 날짜 포맷팅 -->
         </tr>
       </tbody>
     </table>
@@ -26,11 +26,15 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "axios"; // axios를 추가합니다.
 import moment from "moment";
+import RegistBoard from "@/components/RegistBoard.vue";
 
 export default {
   name: "BoardList",
+  components: {
+    RegistBoard,
+  },
   data() {
     return {
       boardList: [],
@@ -40,6 +44,9 @@ export default {
     this.getBoardList();
   },
   methods: {
+    reload() {
+      this.getBoardList(); // $refs를 사용하지 않고 직접 호출
+    },
     getBoardList() {
       axios
         .get("http://localhost:8787/api/board/get-board-list.do")
@@ -53,7 +60,7 @@ export default {
         });
     },
     formatDate(date) {
-      return moment(date).format("YYYY-MM-DD"); // 날짜를 YYYY-MM-DD 형식으로 포맷팅
+      return moment(date).format("YYYY-MM-DD");
     },
   },
 };
@@ -62,7 +69,7 @@ export default {
 <style scoped>
 .board-table {
   width: 100%;
-  max-width: 1150px; /* 최대 너비 설정 */
+  max-width: 800px; /* 최대 너비 설정 */
   margin: 0 auto; /* 테이블을 중앙에 배치 */
   border-collapse: collapse;
   margin-top: 20px;

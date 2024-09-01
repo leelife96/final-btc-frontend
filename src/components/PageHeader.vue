@@ -2,7 +2,7 @@
   <header>
     <div id="nav">
       <div class="nav-center">
-        <span class="coin-title">Coin</span>
+        <span class="coin-title">Bitcoin</span>
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/board/list">게시판</router-link>
@@ -69,13 +69,13 @@ header {
   gap: 15px; /* 메뉴 간 간격 */
   flex-grow: 1; /* 중앙 정렬을 위해 flex-grow 사용 */
   position: relative; /* 자식 요소의 위치를 조정하기 위해 사용 */
-  margin-left: -750px; /* 왼쪽으로 옮길 값 설정 */
+  margin-left: -650px; /* 왼쪽으로 옮길 값 설정 */
 }
 
 .coin-title {
+  color: #f0b90b;
   font-weight: bold;
-  font-size: 20px;
-  color: white;
+  font-size: 40px;
 }
 
 .nav-right {

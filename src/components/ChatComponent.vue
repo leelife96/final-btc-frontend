@@ -108,7 +108,6 @@ export default {
   width: 400px;
   background-color: #020000;
   border-radius: 10px; /* 모서리 둥글게 */
-  border: 2px solid #42b983; /* 테두리 색상 및 두께 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 외곽 그림자 */
   overflow: hidden; /* 자식 요소가 테두리 바깥으로 나가지 않도록 설정 */
 }
@@ -135,7 +134,7 @@ export default {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   text-align: center;
-  border-bottom: 2px solid #42b983; /* 하단 테두리 추가 */
+  border-bottom: 2px solid #3b3b3b; /* 하단 테두리 추가 */
 }
 
 .chat-header h2 {
@@ -196,7 +195,7 @@ export default {
   flex-direction: column;
   padding: 10px;
   background-color: #020000;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #3b3b3b;
 }
 
 .input-box {
