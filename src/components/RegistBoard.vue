@@ -57,10 +57,7 @@ export default {
     },
     registboard() {
       axios
-        .post(
-          "http://localhost:8787/api/board/get-board-list.do",
-          this.setParams
-        )
+        .post("http://localhost:8787/api/board/regist-board.do", this.setParams)
         .then((response) => {
           if (response.data.success || response.data.result) {
             this.openPopup = false; // 창의 화면 변수 false로 창 닫기
