@@ -110,7 +110,7 @@ export default {
           'https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","XRPUSDT","SOLUSDT","DOGEUSDT","TRXUSDT","WLDUSDT","BNBUSDT","AVAXUSDT","NEARUSDT","MATICUSDT","LINKUSDT","DOTUSDT","TONUSDT","ADAUSDT","SUIUSDT"]'
         );
         const cryptoCompareResponse = await fetch(
-          `https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,SOL,DOGE,TRX,WLD,BNB,AVAX,NEAR,MATIC,LINK,DOT,TON,ADA,SUI&tsyms=KRW&api_key=${process.env.VUE_APP_CRYPTOCOMPARE_API_KEY}`
+          `https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,SOL,DOGE,TRX,WLD,BNB,AVAX,NEAR,MATIC,LINK,DOT,TON,ADA,SUI&tsyms=KRW&api_key=${process.env.VUE_APP_CRYPTO_API_KEY}`
         );
 
         if (!binanceResponse.ok || !cryptoCompareResponse.ok) {

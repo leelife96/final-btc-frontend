@@ -1,82 +1,79 @@
 <template>
-  <div>
-    <!-- 글쓰기 버튼 -->
-    <button @click="openPopup = true">글쓰기</button>
-
-    <!-- 팝업 내용 -->
-    <div v-if="openPopup" class="popup">
-      <div class="popup-content">
-        <h2>글쓰기</h2>
-
-        <!-- 본문 영역 -->
-        <input
-          type="text"
-          v-model="title"
-          class="input-title"
-          placeholder="제목을 입력해 주세요"
-        />
-        <textarea
-          v-model="content"
-          class="input-content"
-          rows="10"
-          placeholder="내용을 입력해 주세요."
-        ></textarea>
-
-        <!-- dialog footer 영역 -->
-        <div class="popup-footer">
-          <button @click="registboard()">확인</button>
-          <button @click="closePopup">취소</button>
-        </div>
+  <div v-if="openPopup" class="popup-overlay">
+    <div class="popup-content">
+      <h2>{{ editMode ? "글 수정" : "글 등록" }}</h2>
+      <input type="text" v-model="title" placeholder="제목을 입력해 주세요" />
+      <textarea
+        v-model="content"
+        rows="10"
+        placeholder="내용을 입력해 주세요."
+      ></textarea>
+      <div class="button-group">
+        <button @click="registboard">확인</button>
+        <button @click="closePopup">취소</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios"; // axios를 추가합니다.
+import axios from "axios";
+
 export default {
+  name: "RegistBoard",
   data() {
     return {
       openPopup: false,
+      bno: "",
+      editMode: false,
       title: "",
       content: "",
     };
   },
-  computed: {
-    setParams() {
-      const params = {
+  methods: {
+    registboard() {
+      const apiUrl = this.editMode
+        ? "http://localhost:8787/api/board/edit-board.do"
+        : "http://localhost:8787/api/board/regist-board.do";
+
+      axios
+        .post(apiUrl, this.getParams())
+        .then((response) => {
+          if (response.data.success) {
+            this.resetForm();
+            this.$emit("reload");
+            this.closePopup();
+          } else {
+            console.error("Failed to process the request.");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    getParams() {
+      return {
+        bno: this.bno,
         title: this.title,
         content: this.content,
       };
-      return params;
     },
-  },
-  methods: {
+    resetForm() {
+      this.bno = "";
+      this.title = "";
+      this.content = "";
+      this.editMode = false;
+    },
     closePopup() {
       this.openPopup = false;
-    },
-    registboard() {
-      axios
-        .post("http://localhost:8787/api/board/regist-board.do", this.setParams)
-        .then((response) => {
-          if (response.data.success || response.data.result) {
-            this.openPopup = false; // 창의 화면 변수 false로 창 닫기
-            this.title = ""; // 입력되어 있는 변수들의 값을 초기화
-            this.content = "";
-            this.$emit("reload");
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      this.resetForm();
     },
   },
 };
 </script>
 
 <style scoped>
-/* 팝업 배경 스타일 */
-.popup {
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -88,58 +85,17 @@ export default {
   align-items: center;
 }
 
-/* 팝업 콘텐츠 스타일 */
 .popup-content {
   background-color: white;
   padding: 20px;
-  width: 30%;
   border-radius: 8px;
-  text-align: left;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* 제목 입력 필드 스타일 */
-.input-title {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* 내용 입력 필드 스타일 */
-.input-content {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: none; /* textarea의 크기 조정 방지 */
-}
-
-/* 버튼 영역 스타일 */
-.popup-footer {
-  margin-top: 20px;
+.button-group {
   display: flex;
-  justify-content: flex-end;
-}
-
-.popup-footer button {
-  margin-left: 10px;
-  padding: 8px 16px;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.popup-footer button:first-child {
-  background-color: #007bff;
-  color: white;
-}
-
-.popup-footer button:last-child {
-  background-color: #f0f0f0;
-  color: #333;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 </style>

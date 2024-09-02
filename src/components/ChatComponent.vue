@@ -114,18 +114,20 @@ export default {
 
 .chat-toggle {
   padding: 10px;
-  background-color: #42b983;
+  background-color: #f0b90b;
   color: white;
+  font-weight: bold;
+  font-size: 20px;
   text-align: center;
   cursor: pointer;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom: 2px solid #42b983; /* 테두리 추가 */
+  border-bottom: 2px solid #f0b90b; /* 테두리 추가 */
 }
 
 .chat-content {
   transition: max-height 0.3s ease;
-  border-top: 2px solid #42b983; /* 상단 테두리 추가 */
+  border-top: 2px solid #f0b90b; /* 상단 테두리 추가 */
 }
 
 .chat-header {
