@@ -2,7 +2,7 @@
   <header>
     <div id="nav">
       <div class="nav-center">
-        <span class="coin-title">Bitcoin</span>
+        <span class="coin-title">기웅이의 코인거래소</span>
         <router-link to="/">Home</router-link> |
         <router-link to="/about">About</router-link> |
         <router-link to="/board/list">게시판</router-link>

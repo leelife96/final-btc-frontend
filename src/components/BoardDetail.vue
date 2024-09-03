@@ -10,6 +10,7 @@
       <button @click="closeDetail">닫기</button>
       <div class="button-group">
         <button @click="clickEditButton()">수정</button>
+        <button @click="clickDeleteButton()">삭제</button>
       </div>
     </div>
   </div>
@@ -17,6 +18,7 @@
 
 <script>
 import moment from "moment";
+import axios from "axios";
 
 export default {
   name: "BoardDetail",
@@ -45,6 +47,22 @@ export default {
         content: this.boardDetail.content,
       });
       this.closeDetail();
+    },
+    clickDeleteButton() {
+      const params = {
+        bno: this.boardDetail.bno,
+      };
+      axios
+        .post("http://localhost:8787/api/board/delete-board.do", params)
+        .then(() => {
+          // 'response' 변수 제거
+          this.$emit("reload"); // reload 이벤트를 부모에게 emit
+          this.closeDetail(); // 상세 보기 닫기
+          window.location.reload(); // 페이지 새로고침
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
   },
 };

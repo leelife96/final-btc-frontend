@@ -60,18 +60,18 @@ export default {
   min-width: 680px;
   margin: 60px auto;
   padding: 30px;
-  background-color: #1e1e1e;
+  background-color: #2c2c3c; /* 어두운 배경 */
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* 더 강한 그림자 */
   text-align: center;
-  min-height: 400px; /* 최소 높이를 늘림 */
+  min-height: 400px;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 폼을 컨테이너 중앙에 수직 정렬 */
-  height: 100%; /* 폼이 컨테이너 전체 높이를 차지하게 설정 */
+  justify-content: center;
+  height: 100%;
 }
 
 .input-group {
@@ -83,22 +83,22 @@ export default {
   width: 100%;
   padding: 15px 25px;
   font-size: 16px;
-  color: #ffffff;
-  background-color: #333;
-  border: 2px solid #444;
+  color: #ffffff; /* 밝은 텍스트 색상 */
+  background-color: #1e1e2f; /* 어두운 입력 필드 배경 */
+  border: 2px solid #444; /* 어두운 테두리 */
   border-radius: 8px;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #007bff;
+  border-color: #f0b90b; /* 노란색 테두리 강조 */
 }
 
 .login-button {
   padding: 15px 25px;
-  background-color: #007bff;
-  color: white;
+  background-color: #f0b90b; /* 노란색 배경 */
+  color: #1e1e2f; /* 어두운 텍스트 */
   font-size: 18px;
   font-weight: bold;
   border: none;
@@ -108,12 +108,12 @@ export default {
 }
 
 .login-button:hover {
-  background-color: #0056b3;
+  background-color: #d7a309; /* 살짝 어두운 노란색 */
 }
 
 h2 {
   margin-bottom: 40px;
-  color: #ffffff;
+  color: #ffffff; /* 밝은 텍스트 색상 */
   font-size: 28px;
 }
 </style>

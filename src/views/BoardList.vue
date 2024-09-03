@@ -1,7 +1,9 @@
 <template>
   <div>
     <h3>Bitcoin Community</h3>
-    <button @click="openRegistPopup">글쓰기</button>
+    <button style="background-color: #d7a309" @click="openRegistPopup">
+      글쓰기
+    </button>
     <table class="board-table">
       <thead>
         <tr class="table-header">
@@ -118,7 +120,7 @@ export default {
 .board-table {
   width: 100%;
   margin: 0 auto;
-  max-width: 1150px;
+  max-width: 1250px;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -157,8 +159,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: 0; /* 우측으로 이동 */
+  margin-left: 1070px;
 }
 
 button:hover {

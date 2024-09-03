@@ -72,6 +72,11 @@ export default {
         TON: "톤코인(TON)",
         ADA: "카르다노(ADA)",
         SUI: "Sui(SUI)",
+        ICP: "인터넷 컴퓨터(ICP)",
+        APT: "앱토스(APT)",
+        ETC: "이더리움 클래식(ETC)",
+        XLM: "스텔라(XLM)",
+        WBETH: "Wrapped Beacon ETH(WBETH)",
       },
       coinImages: {
         BTC: "https://cdn-icons-png.flaticon.com/512/5968/5968260.png",
@@ -90,6 +95,12 @@ export default {
         TON: "https://public.bnbstatic.com/image/pgc/202408/67eea2f62141d11a7afd882e371305dc.png",
         ADA: "https://s3.coinmarketcap.com/static-gravity/image/4aec70f6f1254e4f89650cc68ae49f3c.png",
         SUI: "https://s2.coinmarketcap.com/static/img/coins/200x200/20947.png",
+        ICP: "https://s3.coinmarketcap.com/static-gravity/image/2fb1bc84c1494178beef0822179d137d.png",
+        APT: "https://www.coinlore.com/img/aptos.png",
+        ETC: "https://ethereumclassic.org/static/b4107087d99c8cef9bf64e67f2722d47/8fc5d/etcswap.png",
+        XLM: "https://s2.coinmarketcap.com/static/img/coins/200x200/512.png",
+        WBETH:
+          "https://s2.coinmarketcap.com/static/img/coins/200x200/24760.png",
       },
     };
   },
@@ -107,10 +118,10 @@ export default {
       try {
         // 가격, 변동률 및 거래량 데이터 가져오기
         const binanceResponse = await fetch(
-          'https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","XRPUSDT","SOLUSDT","DOGEUSDT","TRXUSDT","WLDUSDT","BNBUSDT","AVAXUSDT","NEARUSDT","MATICUSDT","LINKUSDT","DOTUSDT","TONUSDT","ADAUSDT","SUIUSDT"]'
+          'https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","XRPUSDT","SOLUSDT","DOGEUSDT","TRXUSDT","WLDUSDT","BNBUSDT","AVAXUSDT","NEARUSDT","MATICUSDT","LINKUSDT","DOTUSDT","TONUSDT","ADAUSDT","SUIUSDT","ICPUSDT","APTUSDT","ETCUSDT","XLMUSDT","WBETHUSDT"]'
         );
         const cryptoCompareResponse = await fetch(
-          `https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,SOL,DOGE,TRX,WLD,BNB,AVAX,NEAR,MATIC,LINK,DOT,TON,ADA,SUI&tsyms=KRW&api_key=${process.env.VUE_APP_CRYPTO_API_KEY}`
+          `https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP,SOL,DOGE,TRX,WLD,BNB,AVAX,NEAR,MATIC,LINK,DOT,TON,ADA,SUI,ICP,APT,ETC,XLM,WBETH&tsyms=KRW&api_key=${process.env.VUE_APP_CRYPTO_API_KEY}`
         );
 
         if (!binanceResponse.ok || !cryptoCompareResponse.ok) {

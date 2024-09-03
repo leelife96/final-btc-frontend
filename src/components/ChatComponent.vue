@@ -1,25 +1,25 @@
 <template>
   <div class="chat-container-wrapper">
     <div class="chat-toggle" @click="toggleChat">
-      <span v-if="isChatOpen">채팅방 닫기</span>
-      <span v-else>채팅창 열기</span>
+      <span v-if="isChatOpen">Close Chat</span>
+      <span v-else>Open Chat</span>
     </div>
     <!-- v-if로 채팅창을 조건부 렌더링 -->
     <div v-if="isChatOpen" class="chat-content">
       <div class="chat-header">
-        <h2>실시간 채팅방</h2>
+        <h2>Chat Room</h2>
       </div>
       <div class="chat-container">
         <div class="chat-box">
           <div class="messages">
             <div v-for="(item, idx) in recvList" :key="idx" class="message">
-              <h4 class="message-user">{{ item.userName }}</h4>
-              <p class="message-content">{{ item.content }}</p>
+              <span class="message-user">{{ item.userName }}</span>
+              <span class="message-content">{{ item.content }}</span>
             </div>
           </div>
           <div class="chat-input">
             <div class="input-box">
-              <label class="input-label">사용자 닉네임</label>
+              <label class="input-label">닉네임</label>
               <input
                 v-model="userName"
                 type="text"
@@ -103,45 +103,46 @@ export default {
 <style scoped>
 .chat-container-wrapper {
   position: fixed;
-  top: 80px;
+  bottom: 15px;
   right: 15px;
   width: 400px;
-  background-color: #020000;
-  border-radius: 10px; /* 모서리 둥글게 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 외곽 그림자 */
-  overflow: hidden; /* 자식 요소가 테두리 바깥으로 나가지 않도록 설정 */
+  background-color: #2c2c3c; /* Dark background for container */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  overflow: hidden; /* Ensure child elements do not overflow */
 }
 
 .chat-toggle {
   padding: 10px;
-  background-color: #f0b90b;
-  color: white;
+  background-color: #f0b90b; /* Binance yellow */
+  color: #1e1e2f; /* Dark text for contrast */
   font-weight: bold;
   font-size: 20px;
   text-align: center;
   cursor: pointer;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom: 2px solid #f0b90b; /* 테두리 추가 */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-bottom: 2px solid #f0b90b; /* Bottom border in yellow */
 }
 
 .chat-content {
-  transition: max-height 0.3s ease;
-  border-top: 2px solid #f0b90b; /* 상단 테두리 추가 */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .chat-header {
-  background-color: #020000;
+  background-color: #1e1e2f; /* Darker background for header */
   padding: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   text-align: center;
-  border-bottom: 2px solid #3b3b3b; /* 하단 테두리 추가 */
+  border-bottom: 2px solid #444; /* Subtle border */
 }
 
 .chat-header h2 {
   margin: 0;
-  color: #ffffff;
+  color: #ffffff; /* White text */
 }
 
 .chat-container {
@@ -149,55 +150,56 @@ export default {
   flex-direction: column;
   height: 700px;
   width: 100%;
-  overflow: hidden;
 }
 
 .chat-box {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: #020000;
-  overflow-y: auto; /* 스크롤 가능하도록 설정 */
+  background-color: #2c2c3c; /* Dark background for chat area */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .messages {
   flex: 1;
   padding: 10px;
-  overflow-y: auto; /* 스크롤바 생성 */
+  overflow-y: auto; /* Scrollable message area */
 }
 
 .message {
-  margin-bottom: 5px;
-  padding: 1px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
   border-radius: 8px;
-  text-align: left;
+  background-color: #373737; /* Darker background for messages */
 }
 
 .message-user {
   font-weight: bold;
-  color: #fcfe7f;
-  margin-bottom: 5px;
-  padding: 1px;
+  color: #f0b90b; /* Yellow text for usernames */
+  margin-right: 10px; /* Space between username and content */
   font-size: 15px;
-  border-radius: 4px;
+  flex-shrink: 0; /* Prevent user name from shrinking */
 }
 
 .message-content {
-  margin: 0;
-  padding: 10px;
-  background-color: #373737;
-  color: #ffffff;
+  color: #ffffff; /* White text */
+  background-color: #1e1e2f; /* Even darker background for message content */
   border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  word-break: break-word;
+  word-break: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Ensure long words are wrapped */
+  flex: 1; /* Allow message content to take remaining space */
+  padding: 10px;
 }
 
 .chat-input {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: #020000;
-  border-top: 1px solid #3b3b3b;
+  background-color: #1e1e2f; /* Dark background for input area */
+  border-top: 1px solid #444; /* Top border in dark gray */
 }
 
 .input-box {
@@ -207,10 +209,10 @@ export default {
 }
 
 .input-label {
-  width: 100px; /* 고정 너비 설정 */
+  width: 100px; /* Fixed width for labels */
   margin-right: 10px;
   font-weight: bold;
-  color: #fcfe7f;
+  color: #f0b90b; /* Yellow label text */
   font-size: 14px;
 }
 
@@ -219,20 +221,14 @@ export default {
   padding: 10px;
   box-sizing: border-box;
   resize: none;
-  color: #ffffff;
-  background-color: #333333;
-}
-
-.input-field[type="text"] {
-  height: 40px;
-}
-
-.input-field[type="textarea"] {
-  height: 100px;
+  color: #ffffff; /* White text */
+  background-color: #333; /* Dark input background */
+  border: 2px solid #444; /* Dark border */
+  border-radius: 8px;
 }
 
 .input-field:focus {
-  border-color: #42b983;
+  border-color: #f0b90b; /* Yellow border on focus */
   outline: none;
 }
 </style>
