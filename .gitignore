@@ -25,3 +25,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# 파일 제외
+README.md

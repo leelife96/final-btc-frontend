@@ -69,7 +69,7 @@ header {
   gap: 15px; /* 메뉴 간 간격 */
   flex-grow: 1; /* 중앙 정렬을 위해 flex-grow 사용 */
   position: relative; /* 자식 요소의 위치를 조정하기 위해 사용 */
-  margin-left: -650px; /* 왼쪽으로 옮길 값 설정 */
+  margin-left: -230px; /* 왼쪽으로 옮길 값 설정 */
 }
 
 .coin-title {

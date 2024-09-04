@@ -1,5 +1,13 @@
 <template>
   <div class="coin-container">
+    <!-- ChartComponent 사용 -->
+    <ChartComponent
+      v-if="klineData.length"
+      :klineData="klineData"
+      @interval-changed="updateKlineData"
+    />
+
+    <!-- 시세 테이블 -->
     <table v-if="prices.length" class="coin-table">
       <thead>
         <tr>
@@ -39,6 +47,8 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- 데이터를 불러오지 못한 경우에 표시 -->
     <div v-else>
       <p>Loading...</p>
     </div>
@@ -46,15 +56,22 @@
 </template>
 
 <script>
+// 나머지 코드는 그대로 유지
+import ChartComponent from "./ChartComponent.vue";
 import "../assets/styles/coin-component.css"; // CSS 파일 import
 
 export default {
   name: "CoinComponent",
+  components: {
+    ChartComponent,
+  },
   data() {
     return {
       prices: [],
+      klineData: [],
       updateInterval: 1000, // 1초마다 갱신
       intervalId: null,
+      selectedInterval: "1d", // 기본값을 1일로 설정
       coinNames: {
         BTC: "비트코인(BTC)",
         ETH: "이더리움(ETH)",
@@ -107,6 +124,7 @@ export default {
   created() {
     this.fetchPrices(); // 컴포넌트 생성 시 데이터 가져오기
     this.startPriceUpdate();
+    this.fetchKlineData(); // 차트 데이터 가져오기
   },
   beforeUnmount() {
     if (this.intervalId) {
@@ -145,10 +163,40 @@ export default {
         console.error("Failed to fetch prices:", error);
       }
     },
+    async fetchKlineData() {
+      try {
+        const response = await fetch(
+          `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=${this.selectedInterval}&limit=30`
+        );
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        this.klineData = data.map((entry) => ({
+          x: new Date(entry[0]),
+          y: [
+            parseFloat(entry[1]), // open
+            parseFloat(entry[2]), // high
+            parseFloat(entry[3]), // low
+            parseFloat(entry[4]), // close
+          ],
+        }));
+      } catch (error) {
+        console.error("Failed to fetch kline data:", error);
+      }
+    },
+    updateKlineData(interval) {
+      this.selectedInterval = interval;
+      this.fetchKlineData(); // 새로운 간격에 맞게 데이터 갱신
+    },
     startPriceUpdate() {
       this.fetchPrices(); // 초기 데이터 가져오기
       this.intervalId = setInterval(() => {
         this.fetchPrices(); // 주기적으로 데이터 가져오기
+        this.fetchKlineData(); // 주기적으로 차트 데이터도 가져오기
       }, this.updateInterval);
     },
     formatCurrency(value) {

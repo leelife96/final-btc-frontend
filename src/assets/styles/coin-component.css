@@ -4,7 +4,7 @@
   border-radius: 8px; /* 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   margin: 0 auto; /* 좌우 여백을 자동으로 설정하여 중앙 정렬 */
-  max-width: 1200px; /* 최대 너비 설정 */
+  max-width: 1100px; /* 최대 너비 설정 */
 }
 
 .coin-table {
@@ -55,9 +55,9 @@
 }
 
 .positive-change {
-  background-color: #4caf50; /* 초록색 배경 */
+  background-color: #4caf50;
 }
 
 .negative-change {
-  background-color: #f44336; /* 빨간색 배경 */
+  background-color: #f44336;
 }
