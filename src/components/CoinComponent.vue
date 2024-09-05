@@ -31,7 +31,7 @@
             </div>
           </td>
           <td>${{ formatCurrency(coin.price) }}</td>
-          <td>{{ formatCurrency(coin.priceKRW) }}</td>
+          <td>{{ formatCurrency(coin.priceKRW) }} 원</td>
           <td class="price-change-container">
             <span
               :class="{

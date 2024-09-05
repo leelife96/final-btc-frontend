@@ -32,12 +32,17 @@ export default {
   },
   methods: {
     registboard() {
+      const loggedInUser = localStorage.getItem("loggedInUser"); // Store logged-in user info in localStorage
+
       const apiUrl = this.editMode
         ? "http://localhost:8787/api/board/edit-board.do"
         : "http://localhost:8787/api/board/regist-board.do";
 
       axios
-        .post(apiUrl, this.getParams())
+        .post(apiUrl, {
+          ...this.getParams(),
+          writer: loggedInUser, // Add writer info
+        })
         .then((response) => {
           if (response.data.success) {
             this.resetForm();
@@ -51,6 +56,7 @@ export default {
           console.log(error);
         });
     },
+
     getParams() {
       return {
         bno: this.bno,

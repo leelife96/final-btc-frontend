@@ -1,16 +1,19 @@
 <template>
   <div>
-    <h3>Bitcoin Community</h3>
-    <button style="background-color: #d7a309" @click="openRegistPopup">
+    <h3>Bitcoin Communication</h3>
+    <!-- Show only if logged in -->
+    <button
+      v-if="isLoggedIn"
+      style="background-color: #d7a309"
+      @click="openRegistPopup"
+    >
       글쓰기
     </button>
+
     <table class="board-table">
       <thead>
         <tr class="table-header">
-          <th>번호</th>
           <th>제목</th>
-          <th>내용</th>
-          <th>작성자</th>
           <th>작성일</th>
         </tr>
       </thead>
@@ -20,10 +23,8 @@
           :key="index"
           @click="getBoardDetail(board)"
         >
-          <td>{{ board.bno }}</td>
           <td>{{ board.title }}</td>
-          <td>{{ board.content }}</td>
-          <td>{{ board.writer }}</td>
+          <!-- Writer will be the logged-in user -->
           <td>{{ formatDate(board.regDate) }}</td>
         </tr>
       </tbody>
@@ -55,6 +56,7 @@ export default {
       boardList: [],
       openDetail: false,
       boardDetail: {},
+      isLoggedIn: localStorage.getItem("isLoggedIn") === "true", // Check login state
     };
   },
   created() {
@@ -120,7 +122,7 @@ export default {
 .board-table {
   width: 100%;
   margin: 0 auto;
-  max-width: 1250px;
+  max-width: 1080px;
   border-collapse: collapse;
   margin-top: 20px;
 }
@@ -159,7 +161,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 20px;
-  margin-left: 1070px;
+  margin-left: 970px;
 }
 
 button:hover {

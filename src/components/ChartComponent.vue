@@ -1,14 +1,21 @@
 <template>
   <div class="chart-container">
+    <!-- 제목을 추가하여 BTC/USDT 차트임을 명시 -->
+    <h2 class="chart-title">BTC/USDT Chart</h2>
+
+    <!-- 시간 간격 선택 버튼들 -->
     <div class="interval-selector">
       <button
         v-for="interval in intervals"
         :key="interval.value"
+        :class="{ active: interval.value === selectedInterval }"
         @click="changeInterval(interval.value)"
       >
         {{ interval.label }}
       </button>
     </div>
+
+    <!-- 차트 -->
     <apexchart
       v-if="klineData.length"
       type="candlestick"
@@ -83,19 +90,47 @@ export default {
 
 <style scoped>
 .chart-container {
-  width: 50%;
+  width: 60%; /* 차트 너비를 약간 더 넓게 조정 */
   margin: 0 auto;
+  margin-bottom: 20px;
+  background-color: #1e1e2f; /* 배경을 약간 어둡게 설정 */
+  padding: 20px; /* 내부 패딩 추가 */
+  border-radius: 10px; /* 둥근 모서리 추가 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* 그림자 효과 추가 */
+}
+
+.chart-title {
+  text-align: center;
+  color: #f0b90b; /* Binance 노란색으로 제목 강조 */
+  margin-bottom: 15px; /* 제목과 버튼 사이의 여백 추가 */
+  font-size: 24px; /* 제목 크기 확대 */
 }
 
 .interval-selector {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .interval-selector button {
   margin: 0 5px;
-  padding: 5px 10px;
+  padding: 8px 15px; /* 버튼 크기 조정 */
   cursor: pointer;
+  border: 2px solid #f0b90b; /* 노란색 테두리 추가 */
+  border-radius: 5px;
+  background-color: #2c2c3c; /* 버튼 배경 어둡게 */
+  color: #ffffff;
+  font-weight: bold; /* 텍스트 굵게 */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.interval-selector button.active {
+  background-color: #f0b90b; /* 선택된 버튼을 노란색으로 강조 */
+  color: #1e1e2f; /* 선택된 버튼 텍스트 색상 변경 */
+}
+
+.interval-selector button:hover {
+  background-color: #f0b90b; /* 호버 시 노란색으로 변경 */
+  color: #1e1e2f;
 }
 </style>

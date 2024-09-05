@@ -9,11 +9,15 @@
       </div>
       <div class="nav-right">
         <span v-if="!isLoggedIn">
-          <router-link to="/login">로그인</router-link> |
-          <router-link to="/signup">회원가입</router-link>
+          <router-link to="/login">
+            <button class="nav-button">로그인</button>
+          </router-link>
+          <router-link to="/signup">
+            <button class="nav-button signup">회원가입</button>
+          </router-link>
         </span>
         <span v-if="isLoggedIn">
-          <button @click="logout">Logout</button>
+          <button class="nav-button logout" @click="logout">Logout</button>
         </span>
       </div>
     </div>
@@ -66,10 +70,10 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px; /* 메뉴 간 간격 */
-  flex-grow: 1; /* 중앙 정렬을 위해 flex-grow 사용 */
-  position: relative; /* 자식 요소의 위치를 조정하기 위해 사용 */
-  margin-left: -230px; /* 왼쪽으로 옮길 값 설정 */
+  gap: 15px;
+  flex-grow: 1;
+  position: relative;
+  margin-left: -340px;
 }
 
 .coin-title {
@@ -80,7 +84,7 @@ header {
 
 .nav-right {
   display: flex;
-  gap: 15px; /* 메뉴 간 간격 */
+  gap: 10px; /* 메뉴 간 간격 */
 }
 
 #nav a {
@@ -93,21 +97,42 @@ header {
 }
 
 #nav a:hover {
-  background-color: #3e8e41;
 }
 
-button {
+/* 버튼 스타일 */
+.nav-button {
   color: white;
-  background-color: transparent;
+  background-color: #f0b90b; /* 바이낸스 스타일의 노란색 */
   border: none;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 8px 15px;
   cursor: pointer;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
-  background-color: #c0392b;
+.nav-button.signup {
+  background-color: #ffffff;
+  color: #f0b90b;
+}
+
+.nav-button.logout {
+  background-color: #e74c3c; /* 로그아웃 버튼은 빨간색으로 설정 */
+  color: white;
+}
+
+.nav-button:hover {
+  background-color: #ffffff;
+  color: #f0b90b;
+}
+
+.nav-button.signup:hover {
+  background-color: #f0b90b;
+  color: white;
+}
+
+.nav-button.logout:hover {
+  background-color: #c0392b; /* 로그아웃 버튼의 호버 상태 */
+  color: white;
 }
 </style>
