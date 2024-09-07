@@ -68,7 +68,7 @@ export default {
     },
     getBoardList() {
       axios
-        .get("http://localhost:8787/api/board/get-board-list.do")
+        .get("/api/board/get-board-list.do") // 수정된 경로
         .then((response) => {
           if (response.data.success) {
             this.boardList = response.data.result;
@@ -86,7 +86,7 @@ export default {
         bno: board.bno,
       };
       axios
-        .post("http://localhost:8787/api/board/get-board-detail.do", params)
+        .post("/api/board/get-board-detail.do", params) // 수정된 경로
         .then((response) => {
           if (response.data.success) {
             this.boardDetail = response.data.result;

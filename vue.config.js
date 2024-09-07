@@ -10,11 +10,12 @@ module.exports = defineConfig({
 const target = "http://localhost:8787";
 module.exports = {
   devServer: {
-    port: 8787,
+    port: 9000, // Vue.js를 9000에서 실행
     proxy: {
       "/api": {
-        target,
-        changOrigin: true,
+        target: "http://localhost:8787", // Spring Boot 서버
+        changeOrigin: true,
+        pathRewrite: { "^/api": "" }, // 경로에서 /api 제거
       },
     },
   },

@@ -17,7 +17,7 @@ import store from "./store";
 import moment from "moment"; // moment.js를 임포트합니다.
 
 // Axios 기본 URL 설정
-axios.defaults.baseURL = "http://localhost:8787";
+axios.defaults.baseURL = "/api";
 
 // 애플리케이션 인스턴스 생성
 const app = createApp(App);

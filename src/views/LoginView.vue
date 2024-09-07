@@ -33,13 +33,10 @@ export default {
     ...mapActions(["login"]),
     async login() {
       try {
-        const response = await axios.post(
-          "http://localhost:8787/api/users/login",
-          {
-            userId: this.userId,
-            password: this.password,
-          }
-        );
+        const response = await axios.post("/api/users/login", {
+          userId: this.userId,
+          password: this.password,
+        });
         if (response.data === "Login successful") {
           localStorage.setItem("isLoggedIn", "true");
           this.$store.dispatch("login");

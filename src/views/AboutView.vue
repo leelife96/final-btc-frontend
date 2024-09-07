@@ -32,7 +32,7 @@
       MySQL, HeidiSQL
       <br />
       <strong>기타:</strong>
-      WebSocket, RESTful API
+      WebSocket, RESTful API, AWS EC2, Git
     </ul>
 
     <h2 style="margin-top: 40px; margin-bottom: 20px">주요 기능</h2>
@@ -71,6 +71,13 @@
           <br />
           로그인 후에는 개인화된 기능을 사용할 수 있으며, 글쓰기 버튼 등 특정
           기능에 접근할 수 있습니다.
+        </p>
+      </li>
+      <li style="text-align: left">
+        <strong>AWC EC2 실제 서비스 배포:</strong>
+        <p>
+          AWS EC2 클라우드 컴퓨팅 서비스를 활용하여 실제 웹 사이트를 배포할 수
+          있었습니다.
         </p>
       </li>
     </ol>

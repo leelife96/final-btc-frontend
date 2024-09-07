@@ -36,9 +36,7 @@ export default {
     ...mapActions(["logout"]),
     async logout() {
       try {
-        const response = await axios.post(
-          "http://localhost:8787/api/users/logout"
-        );
+        const response = await axios.post("/api/users/logout");
         if (response.data === "Logout successful") {
           localStorage.removeItem("isLoggedIn");
           this.$store.dispatch("logout");
