@@ -64,9 +64,9 @@ export default {
   min-height: 400px;
   margin: 60px auto;
   padding: 20px;
-  background-color: #2c2c3c; /* 어두운 배경 */
+  background-color: #2c2c3c;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* 더 강한 그림자 */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -84,22 +84,22 @@ export default {
   width: 100%;
   padding: 12px 20px;
   font-size: 14px;
-  color: #ffffff; /* 밝은 텍스트 색상 */
-  background-color: #1e1e2f; /* 어두운 입력 필드 배경 */
-  border: 2px solid #444; /* 어두운 테두리 */
+  color: #ffffff;
+  background-color: #1e1e2f;
+  border: 2px solid #444;
   border-radius: 8px;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
 .input-field:focus {
-  border-color: #f0b90b; /* 노란색 테두리 강조 */
+  border-color: #f0b90b;
 }
 
 .signup-button {
   padding: 12px 20px;
-  background-color: #f0b90b; /* 노란색 배경 */
-  color: #1e1e2f; /* 어두운 텍스트 */
+  background-color: #f0b90b;
+  color: #1e1e2f;
   font-size: 16px;
   font-weight: bold;
   border: none;
@@ -114,7 +114,7 @@ export default {
 
 h2 {
   margin-bottom: 30px;
-  color: #ffffff; /* 밝은 텍스트 색상 */
+  color: #ffffff;
   font-size: 24px;
 }
 </style>

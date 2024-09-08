@@ -85,24 +85,24 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75); /* Darker background for consistency */
+  background-color: rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .popup-content {
-  background-color: #2c2c3c; /* Dark background for popup */
+  background-color: #2c2c3c;
   padding: 20px;
   border-radius: 8px;
   width: 50%;
-  max-width: 600px; /* Similar width to BoardDetail.vue */
+  max-width: 600px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   color: #ffffff;
 }
 
 .popup-content h2 {
-  color: #f0b90b; /* Binance yellow for headings */
+  color: #f0b90b;
   margin-bottom: 20px;
 }
 
@@ -112,15 +112,15 @@ export default {
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 4px;
-  border: none; /* No border for a clean look */
-  background-color: #1e1e2f; /* Darker input fields */
-  color: #ffffff; /* Light text color */
+  border: none;
+  background-color: #1e1e2f;
+  color: #ffffff;
   font-size: 14px;
 }
 
 .popup-content input::placeholder,
 .popup-content textarea::placeholder {
-  color: #888; /* Placeholder color */
+  color: #888;
 }
 
 .button-group {
@@ -130,7 +130,7 @@ export default {
 }
 
 .confirm-button {
-  background-color: #f0b90b; /* Binance yellow */
+  background-color: #f0b90b;
   color: #1e1e2f;
   padding: 10px 20px;
   border: none;
@@ -141,11 +141,11 @@ export default {
 }
 
 .confirm-button:hover {
-  background-color: #d7a309; /* Slightly darker yellow on hover */
+  background-color: #d7a309;
 }
 
 .cancel-button {
-  background-color: #444; /* Dark background for cancel button */
+  background-color: #444;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
@@ -156,6 +156,6 @@ export default {
 }
 
 .cancel-button:hover {
-  background-color: #555; /* Slightly lighter background on hover */
+  background-color: #555;
 }
 </style>

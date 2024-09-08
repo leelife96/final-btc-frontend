@@ -51,7 +51,6 @@ export default {
 </script>
 
 <style scoped>
-/* 헤더 및 네비게이션 스타일 */
 header {
   background-color: #181a20;
   padding: 10px;
@@ -82,7 +81,7 @@ header {
 
 .nav-right {
   display: flex;
-  gap: 10px; /* 메뉴 간 간격 */
+  gap: 10px;
 }
 
 #nav a {
@@ -100,7 +99,7 @@ header {
 /* 버튼 스타일 */
 .nav-button {
   color: white;
-  background-color: #f0b90b; /* 바이낸스 스타일의 노란색 */
+  background-color: #f0b90b;
   border: none;
   font-weight: bold;
   padding: 8px 15px;
@@ -115,7 +114,7 @@ header {
 }
 
 .nav-button.logout {
-  background-color: #e74c3c; /* 로그아웃 버튼은 빨간색으로 설정 */
+  background-color: #e74c3c;
   color: white;
 }
 
@@ -130,7 +129,7 @@ header {
 }
 
 .nav-button.logout:hover {
-  background-color: #c0392b; /* 로그아웃 버튼의 호버 상태 */
+  background-color: #c0392b;
   color: white;
 }
 </style>

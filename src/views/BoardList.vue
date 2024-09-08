@@ -24,7 +24,7 @@
           @click="getBoardDetail(board)"
         >
           <td>{{ board.title }}</td>
-          <!-- Writer will be the logged-in user -->
+
           <td>{{ formatDate(board.regDate) }}</td>
         </tr>
       </tbody>
@@ -56,7 +56,7 @@ export default {
       boardList: [],
       openDetail: false,
       boardDetail: {},
-      isLoggedIn: localStorage.getItem("isLoggedIn") === "true", // Check login state
+      isLoggedIn: localStorage.getItem("isLoggedIn") === "true",
     };
   },
   created() {
@@ -132,7 +132,7 @@ export default {
   border: 1px solid #3c3c4e;
   padding: 8px;
   text-align: center;
-  color: #ffffff; /* 글자색을 하얀색으로 설정 */
+  color: #ffffff;
 }
 
 .board-table th {

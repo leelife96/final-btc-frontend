@@ -2,7 +2,7 @@
   <div id="app">
     <PageHeader />
 
-    <!-- 채팅 컴포넌트 사용 -->
+    <!-- 채팅 컴포넌트 -->
     <ChatComponent />
 
     <router-view />
@@ -21,7 +21,7 @@ export default {
   name: "App",
   components: {
     PageHeader,
-    ChatComponent, // 채팅 컴포넌트 등록
+    ChatComponent,
   },
 };
 </script>
@@ -36,8 +36,8 @@ export default {
   background-color: #181a20;
   display: flex;
   flex-direction: column;
-  margin: 0; /* Remove default margin */
-  min-height: 100vh; /* 화면 전체 높이를 차지 */
+  margin: 0;
+  min-height: 100vh;
 }
 
 nav {
@@ -54,15 +54,15 @@ nav a.router-link-exact-active {
 }
 
 .content {
-  flex: 1; /* Allow content to grow and fill the available space */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align content at the top */
+  justify-content: flex-start;
   padding: 20px;
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  overflow-y: auto;
 }
 
 #app > footer {
-  margin-top: auto; /* Push footer to the bottom */
+  margin-top: auto;
 }
 </style>
