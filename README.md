@@ -7,32 +7,34 @@
 - [소개](#소개)
 - [데모](#데모)
 - [시작하기](#시작하기)
-  - [필수 조건](#필수-조건)
+  - [개발 환경](#개발-환경)
   - [설치 방법](#설치-방법)
-- [사용 방법](#사용-방법)
+- [주요 기능](#주요-기능)
 - [기여하기](#기여하기)
-- [문서화](#문서화)
-- [라이센스](#라이센스)
-- [연락처](#연락처)
 
-## 데모
+## 실제 운영중인 사이트
 [가상화폐 홈페이지 링크](http://3.34.231.185/)
 
 ## 시작하기
 
-### 필수 조건
-- JDK 11 이상
-- Node.js 및 npm
-- Maven
+### 개발 환경
+- JDK 17 
+- Visual Studio Code 및 npm
+- STS4(Spring Tool Suite 4)
 - Nginx
+- Ubuntu
+- MobaXterm
+- AWS(Amazon Web Services)
 
-### 설치 방법
+### 기술 스택
 
-1. **EC2 인스턴스에 접속:**
-   ```bash
-   ssh -i "your-key.pem" ubuntu@3.34.231.185
+- 프론트엔드 : Vue.js, HTML, CSS, Javascript
+- 백엔드 : Spring Boot, Mybatis, Java
+- 데이터베이스: MySQL, HeidiSQL, AWS RDS
+- 기타: WebSocket, RESTful API, AWS EC2, Git, Ubuntu, Nginx, RDS
 
 
-## 연락처
+## 주요 기능
+
 
 
