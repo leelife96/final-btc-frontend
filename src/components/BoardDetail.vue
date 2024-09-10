@@ -53,7 +53,7 @@ export default {
         bno: this.boardDetail.bno,
       };
       axios
-        .post("http://localhost:8787/api/board/delete-board.do", params)
+        .post("/api/board/delete-board.do", params)
         .then(() => {
           this.$emit("reload");
           this.closeDetail();

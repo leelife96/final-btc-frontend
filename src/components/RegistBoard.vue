@@ -35,8 +35,8 @@ export default {
       const loggedInUser = localStorage.getItem("loggedInUser"); // Store logged-in user info in localStorage
 
       const apiUrl = this.editMode
-        ? "http://localhost:8787/api/board/edit-board.do"
-        : "http://localhost:8787/api/board/regist-board.do";
+        ? "/api/board/edit-board.do"
+        : "/api/board/regist-board.do";
 
       axios
         .post(apiUrl, {
