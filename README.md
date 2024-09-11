@@ -8,8 +8,9 @@
   - [기술 스택](#기술-스택)
   - [개발 인원](#개발-인원)
   - [개발 기간](#개발-기간)
-- [주요 기능](#주요-기능)
 - [소프트웨어 아키텍처](#소프트웨어-아키텍처)
+- [주요 기능](#주요-기능)
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -47,7 +48,15 @@
  - 이기웅 1명
 
 ### 개발 기간
- - 2024.07.25 ~ 2024.09.11
+ - 2024.07.14 ~ 2024.09.11
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+## 소프트웨어 아키텍처
+
+![final-btc-Architecture](https://github.com/user-attachments/assets/1df5f936-d9af-47e5-a826-20935c665ef4)
+
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -83,7 +92,4 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-## 소프트웨어 아키텍처
-
-![final-btc-Architecture](https://github.com/user-attachments/assets/1f2d601b-f222-4bbf-a85f-984084772b3b)
 
