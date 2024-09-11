@@ -6,6 +6,8 @@
 - [시작하기](#시작하기)
   - [개발 환경](#개발-환경)
   - [설치 방법](#설치-방법)
+  - [개발 인원](#개발-인원)
+  - [개발 기간](#개발-기간)
 - [주요 기능](#주요-기능)
 - [소프트웨어 아키텍처](#소프트웨어-아키텍처)
 
@@ -36,6 +38,11 @@
 - 데이터베이스: MySQL, HeidiSQL, AWS RDS
 - 기타: WebSocket, RESTful API, AWS EC2, Git, Ubuntu, Nginx, RDS
 
+### 개발 인원
+ - 이기웅
+
+### 개발 기간
+ - 2024.07.25 ~ 2024.09.11
 
 ## 주요 기능
 
@@ -45,26 +52,28 @@
 ![Screenshot_1](https://github.com/user-attachments/assets/22eab6d8-b7e0-4a9e-b13e-571d6ea07448)  
 
 
-### 암호화폐 시세 모니터링 
+### 암호화폐 시세 모니터링                                                               
 : 암호화폐 실시간 시세(현재가, 24시간 거래량, 24시간 변동률)를 보여줍니다
 
 ![image](https://github.com/user-attachments/assets/8c838a03-6f98-4502-b11b-6df4b232f335)
 
 
-### 암호화폐 시세 모니터링 
+### 실시간 채팅 
 : 암호화폐 실시간 시세(현재가, 24시간 거래량, 24시간 변동률)를 보여줍니다
 
 ![image](https://github.com/user-attachments/assets/5ec6d869-4de7-4f82-954f-577c8174ebc2)
 
-### 암호화폐 시세 모니터링 
+### 로그인 회원가입
 : 암호화폐 실시간 시세(현재가, 24시간 거래량, 24시간 변동률)를 보여줍니다
 
 ![Screenshot_3](https://github.com/user-attachments/assets/34b0efc3-808b-447e-85a2-42c2e6628382) ![Screenshot_4](https://github.com/user-attachments/assets/e87334ed-61ce-4ecb-9901-6f008c6305b0)
 
 
-### 암호화폐 시세 모니터링 
+### 자유게시판 
 : 암호화폐 실시간 시세(현재가, 24시간 거래량, 24시간 변동률)를 보여줍니다
 
 ![캡처](https://github.com/user-attachments/assets/d2e5c674-a9ec-4d23-b981-ff0a7011fd63)
 
 
+
+## 소프트웨어 아키텍처
