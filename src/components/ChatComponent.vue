@@ -106,23 +106,23 @@ export default {
   bottom: 15px;
   right: 15px;
   width: 400px;
-  background-color: #2c2c3c; /* Dark background for container */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  overflow: hidden; /* Ensure child elements do not overflow */
+  background-color: #2c2c3c;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
 .chat-toggle {
   padding: 10px;
-  background-color: #f0b90b; /* Binance yellow */
-  color: #1e1e2f; /* Dark text for contrast */
+  background-color: #f0b90b;
+  color: #1e1e2f;
   font-weight: bold;
   font-size: 20px;
   text-align: center;
   cursor: pointer;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
-  border-bottom: 2px solid #f0b90b; /* Bottom border in yellow */
+  border-bottom: 2px solid #f0b90b;
 }
 
 .chat-content {
@@ -132,17 +132,17 @@ export default {
 }
 
 .chat-header {
-  background-color: #1e1e2f; /* Darker background for header */
+  background-color: #1e1e2f;
   padding: 10px;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   text-align: center;
-  border-bottom: 2px solid #444; /* Subtle border */
+  border-bottom: 2px solid #444;
 }
 
 .chat-header h2 {
   margin: 0;
-  color: #ffffff; /* White text */
+  color: #ffffff;
 }
 
 .chat-container {
@@ -156,14 +156,14 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: #2c2c3c; /* Dark background for chat area */
-  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #2c2c3c;
+  overflow-y: auto;
 }
 
 .messages {
   flex: 1;
   padding: 10px;
-  overflow-y: auto; /* Scrollable message area */
+  overflow-y: auto;
 }
 
 .message {
@@ -172,25 +172,25 @@ export default {
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 8px;
-  background-color: #373737; /* Darker background for messages */
+  background-color: #373737;
 }
 
 .message-user {
   font-weight: bold;
-  color: #f0b90b; /* Yellow text for usernames */
-  margin-right: 10px; /* Space between username and content */
+  color: #f0b90b;
+  margin-right: 10px;
   font-size: 15px;
-  flex-shrink: 0; /* Prevent user name from shrinking */
+  flex-shrink: 0;
 }
 
 .message-content {
-  color: #ffffff; /* White text */
-  background-color: #1e1e2f; /* Even darker background for message content */
+  color: #ffffff;
+  background-color: #1e1e2f;
   border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  word-break: break-word; /* Break long words */
-  overflow-wrap: break-word; /* Ensure long words are wrapped */
-  flex: 1; /* Allow message content to take remaining space */
+  word-break: break-word;
+  overflow-wrap: break-word;
+  flex: 1;
   padding: 10px;
 }
 
@@ -198,8 +198,8 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background-color: #1e1e2f; /* Dark background for input area */
-  border-top: 1px solid #444; /* Top border in dark gray */
+  background-color: #1e1e2f;
+  border-top: 1px solid #444;
 }
 
 .input-box {
@@ -209,10 +209,10 @@ export default {
 }
 
 .input-label {
-  width: 100px; /* Fixed width for labels */
+  width: 100px;
   margin-right: 10px;
   font-weight: bold;
-  color: #f0b90b; /* Yellow label text */
+  color: #f0b90b;
   font-size: 14px;
 }
 
@@ -221,14 +221,14 @@ export default {
   padding: 10px;
   box-sizing: border-box;
   resize: none;
-  color: #ffffff; /* White text */
-  background-color: #333; /* Dark input background */
-  border: 2px solid #444; /* Dark border */
+  color: #ffffff;
+  background-color: #333;
+  border: 2px solid #444;
   border-radius: 8px;
 }
 
 .input-field:focus {
-  border-color: #f0b90b; /* Yellow border on focus */
+  border-color: #f0b90b;
   outline: none;
 }
 </style>
