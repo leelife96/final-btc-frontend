@@ -90,20 +90,20 @@ export default {
 
 <style scoped>
 .chart-container {
-  width: 60%; /* 차트 너비를 약간 더 넓게 조정 */
+  width: 60%; 
   margin: 0 auto;
   margin-bottom: 20px;
-  background-color: #1e1e2f; /* 배경을 약간 어둡게 설정 */
-  padding: 20px; /* 내부 패딩 추가 */
-  border-radius: 10px; /* 둥근 모서리 추가 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* 그림자 효과 추가 */
+  background-color: #1e1e2f; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
 }
 
 .chart-title {
   text-align: center;
-  color: #f0b90b; /* Binance 노란색으로 제목 강조 */
-  margin-bottom: 15px; /* 제목과 버튼 사이의 여백 추가 */
-  font-size: 24px; /* 제목 크기 확대 */
+  color: #f0b90b; 
+  margin-bottom: 15px;
+  font-size: 24px; 
 }
 
 .interval-selector {
@@ -114,23 +114,23 @@ export default {
 
 .interval-selector button {
   margin: 0 5px;
-  padding: 8px 15px; /* 버튼 크기 조정 */
+  padding: 8px 15px; 
   cursor: pointer;
-  border: 2px solid #f0b90b; /* 노란색 테두리 추가 */
+  border: 2px solid #f0b90b;
   border-radius: 5px;
-  background-color: #2c2c3c; /* 버튼 배경 어둡게 */
+  background-color: #2c2c3c; 
   color: #ffffff;
-  font-weight: bold; /* 텍스트 굵게 */
+  font-weight: bold; 
   transition: background-color 0.3s, color 0.3s;
 }
 
 .interval-selector button.active {
-  background-color: #f0b90b; /* 선택된 버튼을 노란색으로 강조 */
-  color: #1e1e2f; /* 선택된 버튼 텍스트 색상 변경 */
+  background-color: #f0b90b;
+  color: #1e1e2f; 
 }
 
 .interval-selector button:hover {
-  background-color: #f0b90b; /* 호버 시 노란색으로 변경 */
+  background-color: #f0b90b; 
   color: #1e1e2f;
 }
 </style>

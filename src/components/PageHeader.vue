@@ -96,7 +96,6 @@ header {
 #nav a:hover {
 }
 
-/* 버튼 스타일 */
 .nav-button {
   color: white;
   background-color: #f0b90b;
