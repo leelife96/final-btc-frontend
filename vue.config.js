@@ -50,7 +50,7 @@ module.exports = {
   },
 }; */
 
-const target = "http://3.34.231.185"; // EC2 인스턴스의 IP 주소와 포트
+const target = "http://3.34.231.185"; // EC2 인스턴스의 IP 주소와 포트.. Nginx 설정 참고
 
 module.exports = {
   devServer: {

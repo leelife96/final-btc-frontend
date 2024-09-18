@@ -79,7 +79,7 @@ export default {
       }
     },
     connect() {
-      const serverURL = "http://3.34.231.185/ws"; // 실제 EC2 서버 IP 주소
+      const serverURL = "http://3.34.231.185/ws"; // 실제 EC2 서버 IP 주소.. 자세한건 MobaXterm의 Nginx 설정 참고
       let socket = new SockJS(serverURL);
       this.stompClient = Stomp.over(socket);
       this.stompClient.connect(

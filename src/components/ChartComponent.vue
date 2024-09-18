@@ -1,6 +1,5 @@
 <template>
   <div class="chart-container">
-    <!-- 제목을 추가하여 BTC/USDT 차트임을 명시 -->
     <h2 class="chart-title">BTC/USDT Chart</h2>
 
     <!-- 시간 간격 선택 버튼들 -->
@@ -90,20 +89,20 @@ export default {
 
 <style scoped>
 .chart-container {
-  width: 60%; 
+  width: 60%;
   margin: 0 auto;
   margin-bottom: 20px;
-  background-color: #1e1e2f; 
-  padding: 20px; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); 
+  background-color: #1e1e2f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .chart-title {
   text-align: center;
-  color: #f0b90b; 
+  color: #f0b90b;
   margin-bottom: 15px;
-  font-size: 24px; 
+  font-size: 24px;
 }
 
 .interval-selector {
@@ -114,23 +113,23 @@ export default {
 
 .interval-selector button {
   margin: 0 5px;
-  padding: 8px 15px; 
+  padding: 8px 15px;
   cursor: pointer;
   border: 2px solid #f0b90b;
   border-radius: 5px;
-  background-color: #2c2c3c; 
+  background-color: #2c2c3c;
   color: #ffffff;
-  font-weight: bold; 
+  font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .interval-selector button.active {
   background-color: #f0b90b;
-  color: #1e1e2f; 
+  color: #1e1e2f;
 }
 
 .interval-selector button:hover {
-  background-color: #f0b90b; 
+  background-color: #f0b90b;
   color: #1e1e2f;
 }
 </style>

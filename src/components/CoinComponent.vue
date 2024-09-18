@@ -56,7 +56,6 @@
 </template>
 
 <script>
-// 나머지 코드는 그대로 유지
 import ChartComponent from "./ChartComponent.vue";
 import "../assets/styles/coin-component.css"; // CSS 파일 import
 
@@ -166,11 +165,11 @@ export default {
     async fetchKlineData() {
       try {
         const response = await fetch(
-          `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=${this.selectedInterval}&limit=30`
+          `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=${this.selectedInterval}&limit=90` // limit 설정을 통해 N일치 데이터를 가져올 수 있음.
         );
 
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Network response was not ok"); // Network response 실패시
         }
 
         const data = await response.json();
