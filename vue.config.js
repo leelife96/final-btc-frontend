@@ -54,7 +54,7 @@ const target = "http://3.34.231.185"; // EC2 인스턴스의 IP 주소와 포트
 
 module.exports = {
   devServer: {
-    port: 9000,
+    port: 9000, // Vue.js의 port 9000 으로 지정
     proxy: {
       "/api": {
         target: target,

@@ -133,7 +133,7 @@ export default {
   methods: {
     async fetchPrices() {
       try {
-        // 가격, 변동률 및 거래량 데이터 가져오기
+        // Binance API와 CryptoCompare API에서 시세 데이터를 가져오기
         const binanceResponse = await fetch(
           'https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","XRPUSDT","SOLUSDT","DOGEUSDT","TRXUSDT","WLDUSDT","BNBUSDT","AVAXUSDT","NEARUSDT","MATICUSDT","LINKUSDT","DOTUSDT","TONUSDT","ADAUSDT","SUIUSDT","ICPUSDT","APTUSDT","ETCUSDT","XLMUSDT","WBETHUSDT"]'
         );
@@ -194,7 +194,7 @@ export default {
     startPriceUpdate() {
       this.fetchPrices(); // 초기 데이터 가져오기
       this.intervalId = setInterval(() => {
-        this.fetchPrices(); // 주기적으로 데이터 가져오기
+        this.fetchPrices(); // Binance API와 CryptoCompare API에서 시세 데이터를 가져오기
         this.fetchKlineData(); // 주기적으로 차트 데이터도 가져오기
       }, this.updateInterval);
     },
