@@ -105,7 +105,7 @@ h2 {
 }
 
 .detail-info .content {
-  white-space: pre-wrap; /* Preserve line breaks and whitespace */
+  white-space: pre-wrap;
 }
 
 .button-group {

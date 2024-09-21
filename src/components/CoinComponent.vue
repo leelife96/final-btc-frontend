@@ -6,9 +6,15 @@
       :klineData="klineData"
       @interval-changed="updateKlineData"
     />
-
+    <!-- 검색창 추가 -->
+    <input
+      type="text"
+      v-model="searchQuery"
+      placeholder="코인 이름을 입력하세요"
+      class="search-input"
+    />
     <!-- 시세 테이블 -->
-    <table v-if="prices.length" class="coin-table">
+    <table v-if="filteredPrices.length" class="coin-table">
       <thead>
         <tr>
           <th>코인</th>
@@ -19,7 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="coin in prices" :key="coin.symbol">
+        <tr v-for="coin in filteredPrices" :key="coin.symbol">
           <td>
             <div class="coin-info">
               <img
@@ -50,7 +56,7 @@
 
     <!-- 데이터를 불러오지 못한 경우에 표시 -->
     <div v-else>
-      <p>Loading...</p>
+      <p>검색 결과가 없습니다.</p>
     </div>
   </div>
 </template>
@@ -120,6 +126,19 @@ export default {
       },
     };
   },
+  computed: {
+    // 검색어에 맞는 코인만 필터링
+    filteredPrices() {
+      if (this.searchQuery) {
+        const query = this.searchQuery.toLowerCase();
+        return this.prices.filter((coin) => {
+          const coinName = this.coinNames[coin.symbol.replace("USDT", "")];
+          return coinName.toLowerCase().includes(query);
+        });
+      }
+      return this.prices;
+    },
+  },
   created() {
     this.fetchPrices(); // 컴포넌트 생성 시 데이터 가져오기
     this.startPriceUpdate();
@@ -165,7 +184,7 @@ export default {
     async fetchKlineData() {
       try {
         const response = await fetch(
-          `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=${this.selectedInterval}&limit=90` // limit 설정을 통해 N일치 데이터를 가져올 수 있음.
+          `https://api.binance.com/api/v3/klines?symbol=BTCUSDT&interval=${this.selectedInterval}&limit=60` // limit 설정을 통해 N일치 데이터를 가져올 수 있음.
         );
 
         if (!response.ok) {

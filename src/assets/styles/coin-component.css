@@ -60,3 +60,22 @@
 .negative-change {
   background-color: #f44336;
 }
+
+.search-input {
+  margin-bottom: 20px;
+  margin-left: 660px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f3ba2f;
+  border: 1px solid #1e1e1e;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+}
+
+.search-input::placeholder {
+  color: #1e1e1e;
+  opacity: 0.8;
+}
