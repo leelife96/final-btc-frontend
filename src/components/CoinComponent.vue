@@ -141,7 +141,7 @@ export default {
   },
   created() {
     this.fetchPrices(); // 컴포넌트 생성 시 데이터 가져오기
-    this.startPriceUpdate();
+    this.startPriceUpdate(); // 주기적으로 암호화폐 시세 데이터 업데이트
     this.fetchKlineData(); // 차트 데이터 가져오기
   },
   beforeUnmount() {
