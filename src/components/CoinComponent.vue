@@ -101,6 +101,7 @@ export default {
         WBETH: "Wrapped Beacon ETH(WBETH)",
       },
       coinImages: {
+        // 암호화폐 이미지
         BTC: "https://cdn-icons-png.flaticon.com/512/5968/5968260.png",
         ETH: "https://w7.pngwing.com/pngs/268/1013/png-transparent-ethereum-eth-hd-logo.png",
         XRP: "https://www.business2community.com/kr/wp-content/uploads/sites/8/2022/05/xrp-logo-150x150.png",
