@@ -72,6 +72,7 @@ export default {
     chartSeries() {
       return [
         {
+          //비트코인 차트 데이터
           name: "BTC/USDT",
           data: this.klineData,
         },

@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import ChartComponent from "./ChartComponent.vue";
+import ChartComponent from "./ChartComponent.vue"; // 비트코인 차트를 보여주는 컴포넌트
 import "../assets/styles/coin-component.css"; // CSS 파일 import
 
 export default {
@@ -78,6 +78,7 @@ export default {
       intervalId: null,
       selectedInterval: "1d", // 기본값을 1일로 설정
       coinNames: {
+        // 암호화폐 이름
         BTC: "비트코인(BTC)",
         ETH: "이더리움(ETH)",
         XRP: "리플(XRP)",
